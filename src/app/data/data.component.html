@@ -1,0 +1,139 @@
+<!-- <p>data works!</p>
+
+<p>Playing with pipes</p>
+________________________________________________
+<p>Unformatted Date{{realdate}}</p>
+<p>Formatted Date in short{{realdate |date:"short"}}</p>
+<p>Formatted Date in Full date{{realdate |date:"fullDate"}}</p>
+<p>Formatted Date in normal{{realdate | date}}</p>
+<p>Using Decimal {{-3.6 | number:'1.0-0'}}</p>
+<p>Currency Pipe{{money|currency}}</p>
+<p>Currency Pipe in Indian{{money|currency:"INR"}}</p>
+<p>Using lower pipe "{{upper|lowercase}}"</p>
+<p>Using slice {{upper|slice:1:3}}</p>
+<p>Using percentage pipe {{money|percent}}</p>
+<p>Using titlecase pipe {{upper|titlecase}}</p>
+
+
+<div class="container">
+    <div *ngFor="let product of productData">
+        {{product.productId}}
+        {{product.productDescription}}
+        {{product.brand}}
+        {{product.price}}
+        {{product.qty}}
+        {{product.suppliername}}
+    </div>
+</div>
+<div clas="Filters">
+<H2>Welcome to the Filter Sections</H2>
+<form class="form">
+<label for="filter">What is the filter for the brand</label>
+<input type="text" name="brand" value="" [(ngModel)]="brandd"#brandinput>
+<button type="submit">Submit</button>
+<label for="">
+    Total Avilable items:
+</label>
+{{countTotal}}
+
+<div *ngFor="let product of productData">
+    <div *ngIf="product.brand==brandd">
+        {{product.productId}}
+        {{product.productDescription}}
+        {{product.brand}}
+        {{product.price}}
+        {{product.qty}}
+        {{product.suppliername}}
+        <ng-container *ngif="adder(1)" ></ng-container>
+    </div>
+</div>
+<div [innerHTML]="items"> Iteams of TATA are present </div>
+<label for="filter">What is the filter for the Price</label>
+<input type="number" name="price" value="" [(ngModel)]="pricee"#brandinput>
+
+<div *ngFor="let product of productData">
+    <div *ngIf="product.price==pricee">
+        {{product.productId}}
+        {{product.productDescription}}
+        {{product.brand}}
+        {{product.price}}
+        {{product.qty}}
+        {{product.suppliername}}
+    </div>
+</div>
+
+
+
+<label for="filter">Enter the first range for the Price</label>
+<input type="number" name="price" value="" [(ngModel)]="price1"#brandinput><br>
+<label for="filter">Enter the second range for the Price</label>
+<input type="number" name="price" value="" [(ngModel)]="price2"#brandinput>
+
+<div *ngFor="let product of productData">
+    <div *ngIf="product.price>price1 && product.price<price2">
+        {{product.productId}}
+        {{product.productDescription}}
+        {{product.brand}}
+        {{product.price}}
+        {{product.qty}}
+        {{product.suppliername}}
+    </div>
+</div>
+<input type="range" name="range" min="0" max="10000" step="1" value="50">
+<div [innerHTML]="ff">123</div> -->
+<!-- </form> --> 
+
+<hr>
+<h3>Create a Product</h3>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">ProductId</label>
+        <input type="text" class="form-control"
+        id="name" [(ngModel)]="product.productId"
+        name="productId">
+    </div>
+    <div class="form-group">
+        <label for="name">ProductDescription</label>
+        <input type="text" class="form-control"
+        id="name" [(ngModel)]="product.productDescription"
+        name="productDescription">
+    </div>
+    <div class="form-group">
+        <label for="name">Brand</label>
+        <input type="text" class="form-control"
+        id="name" [(ngModel)]="product.brand"
+        name="brand">
+    </div>
+    <div class="form-group">
+        <label for="name">Price</label>
+        <input type="text" class="form-control"
+        id="name" [(ngModel)]="product.price"
+        name="price">
+    </div>
+    <div class="form-group">
+        <label for="name">Quantity</label>
+        <input type="number" class="form-control"
+        id="name" [(ngModel)]="product.qty"
+        name="Quantity">
+    </div>
+    <div class="form-group">
+        <label for="name">suppliername</label>
+        <input type="text" class="form-control"
+        id="name" [(ngModel)]="product.suppliername"
+        name="suppliername">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+</form>
+
+<div class="container">
+    <div *ngFor="let product of productData">
+        {{product.productId}}
+        {{product.productDescription}}
+        {{product.brand}}
+        {{product.price}}
+        {{product.qty}}
+        {{product.suppliername}}
+    </div>
+</div>

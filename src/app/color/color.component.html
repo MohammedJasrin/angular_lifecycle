@@ -1,0 +1,25 @@
+<div>
+
+<p>color works!</p>
+<div [style.background-color]="SelectedColour">
+<label>
+<input type="radio" name="color" value="green" id="green" [(ngModel)]="SelectedColour" > Green
+</label>
+<label>
+    <input type="radio" name="color" value="yellow" [(ngModel)]="SelectedColour" > Yellow
+</label>
+<label>
+    <input type="radio" name="color" value="blue" [(ngModel)]="SelectedColour" > Blue
+</label>
+</div>
+<input type="text" name="texter" id="size" [(ngModel)]="sizeoftext" #sizer> Enter the size of the wanted text
+<p [style.font-size]="sizer.value">The entered size is {{ sizer.value }}</p>
+
+
+</div>
+
+<!-- <input type="text" (keydown)="keyCapture($event.key)">
+<h2>{{title}}</h2>
+<button (click)="send()"></button> -->
+<p>The data is :</p>
+<p>{{display}}</p>
